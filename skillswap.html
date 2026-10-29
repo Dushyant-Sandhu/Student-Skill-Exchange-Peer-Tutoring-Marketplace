@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPU Student Skill Exchange</title>
+    <link rel="stylesheet" href="skillswap.css">
+</head>
+<body>
+    <header>
+        <div class="top-row">
+            <a href="https://www.lpu.in/" aria-label="Lovely Professional University website">
+                <img class="lpu-logo" src="https://www.lpu.in/lpu-assets/images/media-kit/lpu-logo.jpg" alt="Lovely Professional University logo">
+            </a>
+            <div class="site-name">
+                <h1>Student Skill Exchange</h1>
+                <p>Peer tutoring at Lovely Professional University</p>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#subjects">Subjects</a>
+            <a href="#listings">Tutor Listings</a>
+            <a href="#post-listing">Post a Listing</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Study better, together</h2>
+                <p>Find peer support for your courses or offer help in a subject you know well. Connect with fellow LPU students and learn from one another.</p>
+                <a class="button-link" href="#listings">Find a Tutor</a>
+                <a class="button-link" href="#post-listing">Offer Tutoring</a>
+            </div>
+            <img class="campus-image" src="https://www.lpu.in/lpu-assets/images/media-kit/LPU-campus-1-s.jpg" alt="Lovely Professional University campus">
+        </section>
+
+        <section id="subjects">
+            <h2>Find help by subject</h2>
+            <p>Browse the subjects students can offer help with:</p>
+            <div class="subject-list">
+                <a href="#listings">Mathematics</a>
+                <a href="#listings">Computer Science</a>
+                <a href="#listings">English</a>
+                <a href="#listings">Business</a>
+                <a href="#listings">Study Skills</a>
+            </div>
+        </section>
+
+        <section id="listings">
+            <h2>Available Tutor Listings</h2>
+            <div id="listing-area">
+                <p id="empty-message">No listings right now. You can be the first student to offer tutoring.</p>
+            </div>
+            <p class="small-note">Listings you add are saved in this browser for this project demo.</p>
+        </section>
+
+        <section id="post-listing">
+            <h2>Post a Tutor Listing</h2>
+            <p>Enter your details and your tutoring offer will appear in the listings above.</p>
+            <form id="tutor-form">
+                <div class="form-row">
+                    <label for="student-name">Your name</label>
+                    <input id="student-name" name="student-name" required>
+                </div>
+                <div class="form-row">
+                    <label for="subject">Subject you can teach</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Choose a subject</option>
+                        <option>Mathematics</option>
+                        <option>Computer Science</option>
+                        <option>English</option>
+                        <option>Business</option>
+                        <option>Study Skills</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="details">What can you help with?</label>
+                    <textarea id="details" name="details" required></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="availability">When are you available?</label>
+                    <input id="availability" name="availability" placeholder="For example: Tuesday afternoon" required>
+                </div>
+                <button type="submit">Add My Listing</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Student Skill Exchange | A peer learning project for LPU students</p>
+    </footer>
+
+    <script>
+        const listingArea = document.getElementById("listing-area");
+        const tutorForm = document.getElementById("tutor-form");
+        let listings = JSON.parse(localStorage.getItem("tutorListings")) || [];
+
+        function showListings() {
+            listingArea.innerHTML = "";
+
+            if (listings.length === 0) {
+                listingArea.innerHTML = '<p id="empty-message">No listings right now. You can be the first student to offer tutoring.</p>';
+                return;
+            }
+
+            listings.forEach(function(listing) {
+                const card = document.createElement("div");
+                card.className = "listing-card";
+
+                const name = document.createElement("h3");
+                name.textContent = listing.name + " — " + listing.subject;
+
+                const details = document.createElement("p");
+                details.textContent = listing.details;
+
+                const availability = document.createElement("p");
+                availability.textContent = "Available: " + listing.availability;
+
+                card.appendChild(name);
+                card.appendChild(details);
+                card.appendChild(availability);
+                listingArea.appendChild(card);
+            });
+        }
+
+        tutorForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const newListing = {
+                name: document.getElementById("student-name").value,
+                subject: document.getElementById("subject").value,
+                details: document.getElementById("details").value,
+                availability: document.getElementById("availability").value
+            };
+
+            listings.push(newListing);
+            localStorage.setItem("tutorListings", JSON.stringify(listings));
+            showListings();
+            tutorForm.reset();
+        });
+
+        showListings();
+    </script>
+</body>
+</html>
