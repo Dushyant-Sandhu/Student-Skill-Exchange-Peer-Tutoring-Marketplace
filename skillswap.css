@@ -1,197 +1,195 @@
+*  <style>
+/* Page colours and basic text style */
+body {
+    background-color: #f4f6f8;
+    color: #263238;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
 
-     <style>
-    /* Page colours and basic text style */
-    body {
-        background-color: #f4f6f8;
-        color: #263238;
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-    }
+/* University banner at the top */
+header {
+    background-color: white;
+    border-bottom: 4px solid #a51c30;
+    padding: 12px 6%;
+}
 
-    /* University banner at the top */
-    header {
-        background-color: white;
-        border-bottom: 4px solid #a51c30;
-        padding: 12px 6%;
-    }
+.top-row {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+}
 
-    .top-row {
-        align-items: center;
-        display: flex;
-        gap: 16px;
-    }
+.lpu-logo {
+    height: 58px;
+    object-fit: contain;
+    width: 150px;
+}
 
-    .lpu-logo {
-        height: 58px;
-        object-fit: contain;
-        width: 150px;
-    }
+.site-name {
+    color: #a51c30;
+}
 
-    .site-name {
-        color: #a51c30;
-    }
+.site-name h1 {
+    font-size: 24px;
+    margin: 0;
+}
 
-    .site-name h1 {
-        font-size: 24px;
-        margin: 0;
-    }
+.site-name p {
+    margin: 0;
+}
 
-    .site-name p {
-        margin: 0;
-    }
+nav {
+    border-top: 1px solid #eeeeee;
+    margin-top: 12px;
+    padding-top: 10px;
+}
 
-    nav {
-        border-top: 1px solid #eeeeee;
-        margin-top: 12px;
-        padding-top: 10px;
-    }
+nav a {
+    color: #333333;
+    margin-right: 20px;
+    text-decoration: none;
+}
 
-    nav a {
-        color: #333333;
-        margin-right: 20px;
-        text-decoration: none;
-    }
+nav a:hover {
+    color: #a51c30;
+    text-decoration: underline;
+}
 
-    nav a:hover {
-        color: #a51c30;
-        text-decoration: underline;
-    }
+main {
+    margin: 24px auto;
+    max-width: 1000px;
+    padding: 0 16px;
+}
 
-    main {
-        margin: 24px auto;
-        max-width: 1000px;
-        padding: 0 16px;
-    }
+section {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 22px;
+    padding: 22px;
+}
 
-    section {
-        background-color: white;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        margin-bottom: 22px;
-        padding: 22px;
-    }
+h2 {
+    color: #a51c30;
+    margin-top: 0;
+}
 
-    h2 {
-        color: #a51c30;
-        margin-top: 0;
-    }
+.hero {
+    align-items: center;
+    background-color: #fff5f5;
+    display: flex;
+    gap: 24px;
+}
 
+.hero-text {
+    flex: 1;
+}
+
+.campus-image {
+    border-radius: 8px;
+    height: 210px;
+    object-fit: cover;
+    width: 42%;
+}
+
+.button-link,
+button {
+    background-color: #a51c30;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 6px 6px 0;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+.button-link:hover,
+button:hover {
+    background-color: #7d1424;
+}
+
+.subject-list a {
+    background-color: #f4f6f8;
+    border-radius: 5px;
+    color: #333333;
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.subject-list a:hover {
+    background-color: #f5e1e4;
+}
+
+.form-row {
+    margin-bottom: 14px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+input,
+textarea,
+select {
+    border: 1px solid #b8c0c5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font: inherit;
+    padding: 9px;
+    width: 100%;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+.listing-card {
+    border: 1px solid #e0e0e0;
+    border-left: 5px solid #a51c30;
+    border-radius: 5px;
+    margin: 12px 0;
+    padding: 14px;
+}
+
+.listing-card h3 {
+    margin: 0;
+}
+
+.small-note {
+    color: #5d676d;
+    font-size: 14px;
+}
+
+footer {
+    background-color: #333333;
+    color: white;
+    padding: 14px;
+    text-align: center;
+}
+
+@media (max-width: 650px) {
     .hero {
-        align-items: center;
-        background-color: #fff5f5;
-        display: flex;
-        gap: 24px;
-    }
-
-    .hero-text {
-        flex: 1;
+        display: block;
     }
 
     .campus-image {
-        border-radius: 8px;
-        height: 210px;
-        object-fit: cover;
-        width: 42%;
-    }
-
-    .button-link,
-    button {
-        background-color: #a51c30;
-        border: 0;
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 16px;
-        margin: 6px 6px 6px 0;
-        padding: 10px 16px;
-        text-decoration: none;
-    }
-
-    .button-link:hover,
-    button:hover {
-        background-color: #7d1424;
-    }
-
-    .subject-list a {
-        background-color: #f4f6f8;
-        border-radius: 5px;
-        color: #333333;
-        display: inline-block;
-        margin: 5px;
-        padding: 8px 12px;
-        text-decoration: none;
-    }
-
-    .subject-list a:hover {
-        background-color: #f5e1e4;
-    }
-
-    .form-row {
-        margin-bottom: 14px;
-    }
-
-    label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 4px;
-    }
-
-    input,
-    textarea,
-    select {
-        border: 1px solid #b8c0c5;
-        border-radius: 4px;
-        box-sizing: border-box;
-        font: inherit;
-        padding: 9px;
+        height: auto;
+        margin-top: 12px;
         width: 100%;
     }
 
-    textarea {
-        min-height: 80px;
+    nav a {
+        display: inline-block;
+        margin: 5px 12px 5px 0;
     }
-
-    .listing-card {
-        border: 1px solid #e0e0e0;
-        border-left: 5px solid #a51c30;
-        border-radius: 5px;
-        margin: 12px 0;
-        padding: 14px;
-    }
-
-    .listing-card h3 {
-        margin: 0;
-    }
-
-    .small-note {
-        color: #5d676d;
-        font-size: 14px;
-    }
-
-    footer {
-        background-color: #333333;
-        color: white;
-        padding: 14px;
-        text-align: center;
-    }
-
-    @media (max-width: 650px) {
-        .hero {
-            display: block;
-        }
-
-        .campus-image {
-            height: auto;
-            margin-top: 12px;
-            width: 100%;
-        }
-
-        nav a {
-            display: inline-block;
-            margin: 5px 12px 5px 0;
-        }
-    }
-    </style>
-
+}
+</style>
